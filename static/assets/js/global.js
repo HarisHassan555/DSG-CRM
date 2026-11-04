@@ -543,20 +543,8 @@ function initSidebar() {
 
     if (!sideMenu || !toggleBtn || !arrowIcon || !mainContent) return;
 
-    const isRtl = document.documentElement.dir === "rtl";
-    const inlineStartProp = isRtl ? "right" : "left";
-    const subSidebarMarginClass = isRtl ? "mr-[230px]" : "ml-[230px]";
-
-    function setInlineStart(el, value) {
-        el.style.left = "";
-        el.style.right = "";
-        el.style[inlineStartProp] = value;
-    }
-
-    // Remove the pre-paint CSS override so JS classes take over without flash
     document.documentElement.removeAttribute("data-sidebar-collapsed");
 
-    // Suppress transition briefly so the initial state applies instantly
     sideMenu.style.transition = "none";
     requestAnimationFrame(() => { sideMenu.style.transition = ""; });
 
@@ -564,29 +552,20 @@ function initSidebar() {
     let isCollapsed = false;
 
     function collapseMenu() {
-        sideMenu.classList.add("w-0");
-        sideMenu.classList.remove("w-[230px]");
+        sideMenu.classList.add("dsg-subnav-hidden");
+        document.documentElement.setAttribute("data-subnav", "collapsed");
         arrowIcon.classList.add("scale-x-[-1]");
         mainContent.classList.remove("leftspace");
-        setInlineStart(toggleBtn, "calc(5rem - 10px)");
-
-        if (kanbanView) {
-            kanbanView.classList.add("w-full");
-            kanbanView.classList.remove(subSidebarMarginClass);
-        }
+        if (kanbanView) kanbanView.classList.add("w-full");
         isCollapsed = true;
     }
 
     function expandMenu() {
-        sideMenu.classList.remove("w-0");
-        sideMenu.classList.add("w-[230px]");
+        sideMenu.classList.remove("dsg-subnav-hidden", "w-0");
+        document.documentElement.removeAttribute("data-subnav");
         arrowIcon.classList.remove("scale-x-[-1]");
         mainContent.classList.add("leftspace");
-        setInlineStart(toggleBtn, "calc(5rem + 230px - 10px)");
-
-        if (kanbanView) {
-            kanbanView.classList.remove("w-full");
-        }
+        if (kanbanView) kanbanView.classList.remove("w-full");
         isCollapsed = false;
     }
 

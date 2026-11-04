@@ -1,0 +1,195 @@
+/* DSG shell: section nav and record menu sit in horizontal bars.
+   Create forms open from the right; filters open from the left. */
+
+body.dsg-app {
+  background: #f6f7f9;
+}
+
+body.dsg-app .dsg-section-bar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 56px;
+  width: auto;
+  border-bottom: 1px solid #e7ebf0;
+  z-index: 45;
+}
+
+body.dsg-app .dsg-section-bar-inner {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 16px;
+  overflow-x: auto;
+}
+
+body.dsg-app .dsg-section-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+body.dsg-app .nav-link {
+  flex-direction: row;
+  min-width: 0;
+  height: 36px;
+  padding: 0 12px;
+  gap: 8px;
+  border-radius: 999px;
+}
+
+body.dsg-app .nav-link-label {
+  max-width: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+body.dsg-app #sideMenu.dsg-subnav {
+  top: 116px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid #e7ebf0;
+  border-inline: 0;
+}
+
+body.dsg-app #sideMenu.dsg-subnav-hidden,
+html[data-subnav="collapsed"] body.dsg-app #sideMenu {
+  height: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+
+body.dsg-app #subSidebar.dsg-subnav-list {
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 48px 8px 16px;
+  overflow-x: auto;
+}
+
+body.dsg-app .sidebar-link {
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+body.dsg-app #toggleSideMenu {
+  position: fixed;
+  top: 128px;
+  left: auto !important;
+  right: 16px;
+  z-index: 46;
+}
+
+html[dir="rtl"] body.dsg-app #toggleSideMenu {
+  right: auto !important;
+  left: 16px;
+}
+
+body.dsg-app .dsg-frame {
+  padding-top: 116px;
+}
+
+body.dsg-app .modelcontent {
+  padding-top: 52px;
+}
+
+html[data-subnav="collapsed"] body.dsg-app .modelcontent,
+html[data-sidebar-collapsed="true"] body.dsg-app .modelcontent {
+  padding-top: 0;
+}
+
+body.dsg-app .leftspace {
+  padding-inline-start: 0 !important;
+}
+
+body.dsg-app .floating-menu {
+  left: auto;
+  right: 24px;
+  bottom: 24px;
+  background: #1c2430;
+  border-color: #1c2430;
+}
+
+html[dir="rtl"] body.dsg-app .floating-menu {
+  right: auto;
+  left: 24px;
+}
+
+body.dsg-app .floating-menu > .plus-icon {
+  color: #ffffff;
+}
+
+body.dsg-app .dsg-new-btn {
+  border-radius: 999px;
+  margin-inline-start: 8px;
+}
+
+body.dsg-app .dsg-new-btn::before {
+  content: "+";
+  margin-inline-end: 6px;
+  font-weight: 700;
+}
+
+.dsg-drawer-right,
+.dsg-drawer-left {
+  align-items: stretch !important;
+  padding: 0 !important;
+}
+
+.dsg-drawer-right {
+  justify-content: flex-end !important;
+}
+
+.dsg-drawer-left {
+  justify-content: flex-start !important;
+}
+
+.dsg-drawer-right .modal-box,
+.dsg-drawer-left .modal-box {
+  height: 100vh;
+  max-height: 100vh;
+  width: min(520px, 100vw) !important;
+  min-width: 0 !important;
+  max-width: min(520px, 100vw) !important;
+  margin: 0 !important;
+  overflow: auto;
+  border-radius: 0 !important;
+  transition: transform 0.28s ease, opacity 0.28s ease !important;
+}
+
+.dsg-drawer-right .modal-box {
+  border-radius: 18px 0 0 18px !important;
+}
+
+.dsg-drawer-left .modal-box {
+  border-radius: 0 18px 18px 0 !important;
+}
+
+.dsg-drawer-right .modal-box.scale-95 {
+  transform: translateX(48px) scale(1) !important;
+}
+
+.dsg-drawer-left .modal-box.scale-95 {
+  transform: translateX(-48px) scale(1) !important;
+}
+
+.dsg-drawer-right .modal-box.scale-100,
+.dsg-drawer-left .modal-box.scale-100 {
+  transform: translateX(0) scale(1) !important;
+}
+
+@media (max-width: 991px) {
+  body.dsg-app .nav-link-label {
+    display: none;
+  }
+
+  body.dsg-app .dsg-section-bar,
+  body.dsg-app #sideMenu.dsg-subnav {
+    overflow-x: auto;
+  }
+}

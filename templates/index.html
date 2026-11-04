@@ -60,6 +60,7 @@
         <link rel="stylesheet" href="{% static 'assets/css/flowbite/flowbite.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/fontawesome/css/all.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/dsg-layout.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/dark.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/calendar.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/select2.min.css' %}">
@@ -81,7 +82,7 @@
         {% endfor %}
     </head>
 
-    <body class="bg-secondary-50 font-[Inter,_sans-serif]" data-user-id="{{ request.user.id|default:0 }}">
+    <body class="dsg-app bg-secondary-50 font-[Inter,_sans-serif]" data-user-id="{{ request.user.id|default:0 }}">
         <!-- Body Start: Early body initialization -->
         {% load_registered_html "body_start" as body_start_html %}
         {% for tpl in body_start_html %}
@@ -94,7 +95,7 @@
         </script>
 
         <!-- Main Content Wrapper -->
-        <div class="{% if LANGUAGE_BIDI %}mr-[5rem]{% else %}ml-[5rem]{% endif %} h-screen">
+        <div class="dsg-frame h-screen">
             <!-- Header -->
             <div id="header">
                 {% include 'components/header.html' %}

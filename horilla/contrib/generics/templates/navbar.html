@@ -36,6 +36,22 @@
                         <h3 class="text-md font-semibold lg:block leading-tight">
                             {{ nav_title }}
                         </h3>
+                        {% if new_button.url and not show_list_only %}
+                            <button
+                                hx-get="{{ new_button.url }}?{{ request.GET.urlencode }}"
+                                hx-target="{{ new_button.target|default:'#modalBox' }}"
+                                hx-swap="{{ new_button.swap|default:'innerHTML' }}"
+                                onclick="{{ new_button.onclick|default:'openModal()' }}"
+                                class="dsg-new-btn {{ new_button.class|default:'bg-primary-600 rounded-full hover:bg-primary-800 transition duration-300 text-white text-sm px-4 py-1.5' }}"
+                                {% if new_button.attrs %}
+                                    {% for attr_name, attr_value in new_button.attrs.items %}
+                                        {{ attr_name }}="{{ attr_value|safe }}"
+                                    {% endfor %}
+                                {% endif %}
+                            >
+                                {{ new_button.title|default:_("New") }}
+                            </button>
+                        {% endif %}
                     </div>
 
                     {% if all_view_types %}
@@ -319,22 +335,6 @@
                     {% include extra_actions_template %}
                 {% endif %}
 
-                {% if new_button.url and  not show_list_only %}
-                    <button
-                        hx-get="{{ new_button.url }}?{{ request.GET.urlencode }}"
-                        hx-target="{{ new_button.target|default:'#modalBox' }}"
-                        hx-swap="{{ new_button.swap|default:'innerHTML' }}"
-                        onclick="{{ new_button.onclick|default:'openModal()' }}"
-                        class="{{ new_button.class|default:'bg-primary-600 rounded-md hover:bg-primary-800 transition duration-300 text-white text-sm px-4 py-1.5' }}"
-                        {% if new_button.attrs %}
-                            {% for attr_name, attr_value in new_button.attrs.items %}
-                                {{ attr_name }}="{{ attr_value|safe }}"
-                            {% endfor %}
-                        {% endif %}
-                    >
-                        {{ new_button.title|default:_("New") }}
-                    </button>
-                {% endif %}
             </div>
         </div>
     </div>

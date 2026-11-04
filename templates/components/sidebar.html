@@ -1,10 +1,6 @@
-<div class="fixed inset-y-0 {% if LANGUAGE_BIDI %}right-0 border-l border-l-primary-100{% else %}left-0 border-r border-r-primary-100{% endif %} w-[5rem] bg-white z-40">
-    <div class="p-4">
-        <div class="flex items-center justify-center gap-2 mb-8">
-            <img src="{% static LOGO_PATH %}" alt="{% trans 'Logo' %}" class="w-8 h-8">
-        </div>
-
-        <nav class="relative space-y-2">
+<div class="dsg-section-bar bg-white z-40">
+    <div class="dsg-section-bar-inner">
+        <nav class="dsg-section-nav relative">
             {% for item in main_section_menu %}
                 {% has_section_perm_url request.user item.section as perm_url %}
                 {% if perm_url %}
