@@ -136,14 +136,14 @@ def _send_reminder_email(booking):
 <div style="max-width:600px;margin:auto;background:white;border-radius:12px;padding:32px;font-family:sans-serif">
   <h2 style="color:#111;margin-bottom:6px">&#128337; Meeting Reminder</h2>
   <p style="color:#555;margin-bottom:20px">This is a reminder for your upcoming meeting.</p>
-  <div style="background:#f9fafb;border-left:4px solid #e54f38;border-radius:6px;padding:16px;margin-bottom:20px">
+  <div style="background:#f9fafb;border-left:4px solid #1c2430;border-radius:6px;padding:16px;margin-bottom:20px">
     <p style="margin:4px 0"><strong>{page.title}</strong></p>
     <p style="margin:4px 0;color:#555">&#128197; {start_str}</p>
     <p style="margin:4px 0;color:#555">&#128100; Host: {page.host.get_full_name() or page.host.username}</p>
     {location_line}
   </div>
   <p style="font-size:12px;color:#999">
-    <a href="{reschedule_url}" style="color:#e54f38">Reschedule</a> &nbsp;|&nbsp;
+    <a href="{reschedule_url}" style="color:#1c2430">Reschedule</a> &nbsp;|&nbsp;
     <a href="{cancel_url}" style="color:#999">Cancel</a>
   </p>
 </div>"""
@@ -212,12 +212,12 @@ def send_booking_confirmation_email(booking, cancel_url="", reschedule_url=""):
         join_link_row = (
             f'<p style="margin:6px 0;font-size:14px;color:#333">'
             f"&#128279; <strong>Join Link:</strong> "
-            f'<a href="{meeting_url}" style="color:#e54f38;">{meeting_url}</a></p>'
+            f'<a href="{meeting_url}" style="color:#1c2430;">{meeting_url}</a></p>'
         )
         join_button = (
             f'<div style="text-align:center;margin-top:25px">'
             f'<a href="{meeting_url}" style="display:inline-block;padding:10px 20px;'
-            f"background-color:#e54f38;color:white;text-decoration:none;border-radius:6px;"
+            f"background-color:#1c2430;color:white;text-decoration:none;border-radius:6px;"
             f'font-weight:500;margin:5px">Join Meeting</a></div>'
         )
     elif page.location:
@@ -235,7 +235,7 @@ def send_booking_confirmation_email(booking, cancel_url="", reschedule_url=""):
         links = []
         if reschedule_url:
             links.append(
-                f'<a href="{reschedule_url}" style="color:#e54f38;text-decoration:none;">Reschedule</a>'
+                f'<a href="{reschedule_url}" style="color:#1c2430;text-decoration:none;">Reschedule</a>'
             )
         if cancel_url:
             links.append(
@@ -255,7 +255,7 @@ def send_booking_confirmation_email(booking, cancel_url="", reschedule_url=""):
   <p style="font-size:14px;color:#333;line-height:1.6">
     Your booking with <strong>{host_name}</strong> has been confirmed.
   </p>
-  <div style="margin:20px 0;padding:15px;background:#fdf2f1;border-left:4px solid #e54f38;border-radius:6px">
+  <div style="margin:20px 0;padding:15px;background:#fdf2f1;border-left:4px solid #1c2430;border-radius:6px">
     <p style="margin:6px 0;font-size:14px;color:#333">&#128197; <strong>Title:</strong> {page.title}</p>
     <p style="margin:6px 0;font-size:14px;color:#333">&#128336; <strong>When:</strong> {time_line}</p>
     <p style="margin:6px 0;font-size:14px;color:#333">&#128100; <strong>Host:</strong> {host_name}</p>

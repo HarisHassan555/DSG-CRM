@@ -6,13 +6,13 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 DEFAULTS = {
-    "TITLE": _("Horilla"),
-    "LOGIN_WELCOME_LINE": _("Welcome to Horilla"),
+    "TITLE": _("DSG"),
+    "LOGIN_WELCOME_LINE": _("Welcome to DSG"),
     "LOGIN_TAG_LINE": _("Please sign in to access your dashboard"),
-    "SIGNUP_TAG_LINE": _("Please sign up to access Horilla"),
+    "SIGNUP_TAG_LINE": _("Please sign up to access DSG"),
     "LOGO_PATH": "assets/img/logo.svg",
-    "FAVICON_PATH": "favicon.ico",
-    "PAGE_HEADER": _("Horilla"),
+    "FAVICON_PATH": "assets/img/favicon.svg",
+    "PAGE_HEADER": _("DSG"),
 }
 
 

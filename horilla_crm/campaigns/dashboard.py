@@ -160,7 +160,7 @@ DefaultDashboardGenerator.extra_models.append(
         "model": Campaign,
         "name": _("Campaigns"),
         "icon": "fa-bullhorn",
-        "color": "orange",
+        "color": "slate",
         "include_kpi": True,
         "chart_func": create_campaign_charts,
         "table_func": campaign_table_func,

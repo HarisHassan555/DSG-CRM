@@ -300,7 +300,7 @@ class SaveFilterListForm(forms.Form):
         label=_("Make as public"),
         widget=forms.CheckboxInput(
             attrs={
-                "class": "w-4 h-4 bg-[#E9EDF7] rounded-sm accent-[#e54f38]",
+                "class": "w-4 h-4 bg-[#E9EDF7] rounded-sm accent-[#1c2430]",
             }
         ),
     )

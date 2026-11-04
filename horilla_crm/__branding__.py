@@ -3,7 +3,9 @@
 # First-party / Horilla imports
 from horilla.utils.translation import gettext_lazy as _
 
-TITLE = "Horilla CRM"
-LOGIN_WELCOME_LINE = "Welcome to Horilla CRM"
-SIGNUP_TAG_LINE = "Please sign up to access Horilla CRM"
-PAGE_HEADER = "Horilla CRM"
+TITLE = "DSG"
+LOGIN_WELCOME_LINE = "Welcome to DSG"
+SIGNUP_TAG_LINE = "Please sign up to access DSG"
+PAGE_HEADER = "DSG"
+LOGO_PATH = "assets/img/logo.svg"
+FAVICON_PATH = "assets/img/favicon.svg"

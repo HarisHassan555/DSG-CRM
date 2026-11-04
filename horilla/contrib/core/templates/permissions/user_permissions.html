@@ -6,7 +6,7 @@
                     <input
                         type="checkbox"
                         id="master-select-all-user"
-                        class="model-select-all w-4 h-4 border border-[#cfcfcf] rounded-sm accent-[#e54f38] me-2"
+                        class="model-select-all w-4 h-4 border border-[#cfcfcf] rounded-sm accent-[#1c2430] me-2"
                         {% if master_select_all_checked %}
                             checked
                         {% endif %}
@@ -46,7 +46,7 @@
                             <label class="flex items-center">
                                 <input
                                     type="checkbox"
-                                    class="model-select-all w-4 h-4 bg-[#E9EDF7] rounded-sm accent-[#e54f38] me-2"
+                                    class="model-select-all w-4 h-4 bg-[#E9EDF7] rounded-sm accent-[#1c2430] me-2"
                                     {% if model.select_all_checked %}
                                         checked
                                     {% endif %}
@@ -86,7 +86,7 @@
                                         name="permissions"
                                         id="perm_{{ user.id }}_{{ perm.id }}"
                                         value="{{ perm.id }}"
-                                        class="individual-perm w-4 h-4 border border-[#cfcfcf] rounded-sm accent-[#e54f38] me-2"
+                                        class="individual-perm w-4 h-4 border border-[#cfcfcf] rounded-sm accent-[#1c2430] me-2"
                                         {% if perm.has_perm %}
                                             checked
                                         {% endif %}

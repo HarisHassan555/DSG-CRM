@@ -180,7 +180,7 @@ class HorillaColorTheme(models.Model):
         default_theme = cls.objects.filter(is_default=True).first()
         if default_theme:
             return default_theme
-        return cls.objects.filter(name="Coral Red Theme (Default)").first()
+        return cls.objects.filter(name="DSG Light (Default)").first()
 
 
 class CompanyTheme(HorillaCoreModel):
@@ -230,6 +230,4 @@ class CompanyTheme(HorillaCoreModel):
         if company_theme and company_theme.theme:
             return company_theme.theme
 
-        return HorillaColorTheme.objects.filter(
-            name="Coral Red Theme (Default)"
-        ).first()
+        return HorillaColorTheme.objects.filter(name="DSG Light (Default)").first()

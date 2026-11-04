@@ -42,7 +42,7 @@ DEFAULT_CALENDAR_TYPE_COLORS = {
 # Default "Color by: Status" colors; user overrides are UserCalendarPreference rows.
 DEFAULT_STATUS_COLORS = {
     "status_completed": "#10B981",
-    "status_pending": "#F97316",
+    "status_pending": "#64748b",
 }
 
 

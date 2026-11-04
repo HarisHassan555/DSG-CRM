@@ -30,7 +30,7 @@
         </nav>
     </div>
     {% if floating_menu %}
-        <div class="floating-menu bg-primary-600">
+        <div class="floating-menu dsg-fab">
             <input
                 type="checkbox"
                 name="floating-menu"
@@ -38,7 +38,7 @@
                 aria-label="{% trans 'Quick actions' %}"
                 data-tooltip-placement="{% if LANGUAGE_BIDI %}left{% else %}right{% endif %}"
             >
-            <span class="plus-icon bg-primary-600">
+            <span class="plus-icon">
                 <span class="fa fa-plus" aria-hidden="true"></span>
             </span>
             <ul class="floating-nav">
@@ -48,14 +48,14 @@
                         {% for key, value in menu.items.items %}
                             {{ key }}="{{ value }}"
                         {% endfor %}
-                        class="bg-primary-600"
+                        class="dsg-fab-item"
                         title="{{ menu.title }}"
                         aria-label="{{ menu.title }}"
                         data-tooltip-placement="{% if LANGUAGE_BIDI %}left{% else %}right{% endif %}"
                         role="button"
                         tabindex="0"
                     >
-                        <img src="{% static menu.icon %}" alt="" width="17" class="w-4 h-4 brightness-0 invert">
+                        <img src="{% static menu.icon %}" alt="" width="17" class="w-4 h-4 brightness-0">
                     </li>
                 {% endfor %}
             </ul>
