@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ TITLE }} - {% trans "Login" %}</title>
+        <link rel="icon" href="{% static FAVICON_PATH %}" type="image/svg+xml">
 
         <!-- Head Start: Blocking initialization scripts -->
         {% load_registered_html "head_start" "login" as head_start_html %}
@@ -180,7 +181,7 @@
                                 <img src="{% static 'assets/icons/ar1.svg' %}" alt="{% trans 'Arrow' %}">
                             </button>
                             <button
-                                class="btn-with-icon flex gap-3 text-sm px-[15px] py-[13px] rounded-md text-[#E54F38] bg-[#ffefed] hover:bg-[#e54f38] hover:text-white transition duration-300 cursor-pointer whitespace-nowrap"
+                                class="btn-with-icon flex gap-3 text-sm px-[15px] py-[13px] rounded-md text-[#1C2430] bg-[#f1f3f6] hover:bg-[#1c2430] hover:text-white transition duration-300 cursor-pointer whitespace-nowrap"
                                 hx-get="{% url 'core:initialize_database' %}"
                                 hx-target="#sec1"
                                 hx-swap="outerHTML"

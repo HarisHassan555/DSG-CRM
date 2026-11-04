@@ -129,12 +129,17 @@ def spinner(size="lg", *, centered=False, wrapper_class=""):
 
 BTN_VARIANTS = {
     "primary": (
-        "bg-primary-600 rounded-md hover:bg-primary-800 transition duration-300 "
-        "text-white"
+        "dsg-btn dsg-btn-primary bg-primary-600 rounded-lg shadow-sm font-medium "
+        "hover:bg-primary-800 transition duration-200 text-white"
     ),
     "outline": (
-        "outline outline-1 outline-offset-[-1px] outline-primary-600 rounded-md "
-        "hover:bg-primary-300 transition duration-300 text-primary-600"
+        "dsg-btn dsg-btn-outline bg-white border border-primary-300 rounded-lg "
+        "shadow-sm font-medium hover:bg-primary-100 transition duration-200 "
+        "text-primary-600"
+    ),
+    "soft": (
+        "dsg-btn dsg-btn-soft bg-primary-100 border border-primary-200 rounded-lg "
+        "font-medium hover:bg-white transition duration-200 text-dark-600"
     ),
 }
 BTN_TAGS = ("button", "a", "span", "label")

@@ -95,13 +95,13 @@
                 top: 5px !important;
             }
             .select2-container--default .select2-results__option--highlighted {
-                background-color: var(--form-color-light, rgba(237, 79, 56, 0.09)) !important;
-                color: var(--form-color, #e54f38) !important;
+                background-color: var(--form-color-light, rgba(28, 36, 48, 0.06)) !important;
+                color: var(--form-color, #1c2430) !important;
                 transition: 0.3s;
             }
             .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-                background-color: var(--form-color-light, rgba(237, 79, 56, 0.09)) !important;
-                color: var(--form-color, #e54f38) !important;
+                background-color: var(--form-color-light, rgba(28, 36, 48, 0.06)) !important;
+                color: var(--form-color, #1c2430) !important;
             }
             .select2-results__option {
                 font-size: 0.85rem !important;
@@ -215,7 +215,7 @@
                 /* Add margin for spacing between choices */
                 padding: 0 !important;
                 border: none !important;
-                background-color: var(--form-color, #e54f38) !important;
+                background-color: var(--form-color, #1c2430) !important;
                 color: white;
             }
 
@@ -271,21 +271,21 @@
                 resize: none !important;
             }
             #form-header {
-                background-color: var(--form-color-light, rgba(237, 79, 56, 0.15)) !important;
+                background-color: var(--form-color-light, rgba(28, 36, 48, 0.08)) !important;
             }
         </style>
         {% include "inject_html/rtl_assets.html" %}
     </head>
     <body>
-        {% with header_color=form_obj.header_color|default:"#ed4f38" %}
+        {% with header_color=form_obj.header_color|default:"#1c2430" %}
             <div
                 class="form-container"
                 id="form-container"
-                style="--form-color: {{ form_obj.header_color|default:'#ed4f38' }}"
+                style="--form-color: {{ form_obj.header_color|default:'#1c2430' }}"
             >
                 <h2
                     id="form-header"
-                    style="background-color: var(--form-color-light, rgba(237, 79, 56, 0.09)); color: {{ form_obj.header_color|default:'#ed4f38' }}; font-size: 1rem; font-weight: 600; padding: 0.75rem; border-radius: 0.375rem; margin-bottom: 1rem; text-align: center"
+                    style="background-color: var(--form-color-light, rgba(28, 36, 48, 0.06)); color: {{ form_obj.header_color|default:'#1c2430' }}; font-size: 1rem; font-weight: 600; padding: 0.75rem; border-radius: 0.375rem; margin-bottom: 1rem; text-align: center"
                 >
                     {{ form_obj.form_name|default:_('Contact Us') }}
                 </h2>
@@ -455,7 +455,7 @@
 
                 // If color is empty or not set, use default
                 if (!formColor || formColor === '') {
-                    formColor = '#ed4f38';
+                    formColor = '#1c2430';
                 }
 
                 const rgbValues = hexToRgb(formColor);

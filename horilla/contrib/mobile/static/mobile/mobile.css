@@ -67,7 +67,7 @@ body.dark dialog.mobile-dialog {
 .mobile-form input:focus,
 .mobile-form select:focus,
 .mobile-form textarea:focus {
-    border-color: #e54f38;
+    border-color: #1c2430;
     outline: none;
 }
 
@@ -92,7 +92,7 @@ body.dark .mobile-chip {
     flex: none;
     width: 1.25rem;
     height: 1.25rem;
-    accent-color: #e54f38;
+    accent-color: #1c2430;
 }
 
 /* The country code beside a phone number (edit details). */

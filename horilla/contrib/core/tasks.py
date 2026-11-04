@@ -395,7 +395,7 @@ def send_export_email(user, export_format, export_files, modules, company=None):
             </p>
 
             <!-- Info Box -->
-            <div style="margin: 20px 0; padding: 15px; background: #fdf2f1; border-left: 4px solid #e54f38; border-radius: 6px;">
+            <div style="margin: 20px 0; padding: 15px; background: #fdf2f1; border-left: 4px solid #1c2430; border-radius: 6px;">
                 <p style="margin: 6px 0; font-size: 14px; color: #333;">
                     📊 <strong>Export Details:</strong>
                 </p>

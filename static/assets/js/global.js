@@ -327,7 +327,7 @@ function doBulkDeleteRequest(element) {
                 </div>
                 <h2 class="text-lg font-semibold text-gray-800 mb-2">No Rows Selected</h2>
                 <p class="text-sm text-gray-500 mb-6">Please select at least one record before attempting to delete.</p>
-                <button id="closeDbModal" class="px-6 py-2.5 text-sm border-[1px] border-[solid] bg-secondary-600 rounded-[5px] text-white btn-with-icon border-[#e54f38] [transition:.3s]">
+                <button id="closeDbModal" class="px-6 py-2.5 text-sm border-[1px] border-[solid] bg-secondary-600 rounded-[5px] text-white btn-with-icon border-[#1c2430] [transition:.3s]">
                     Close
                 </button>
             </div>
@@ -444,8 +444,8 @@ const SidebarManager = {
 
     setActiveNavLink($link, sectionId) {
         const $navLinks = $("nav a.nav-link");
-        $navLinks.removeClass('bg-primary-600 hover:bg-primary-800');
-        $link.addClass('bg-primary-600 hover:bg-primary-800');
+        $navLinks.removeClass('bg-primary-600 hover:bg-primary-800 dsg-nav-active');
+        $link.addClass('dsg-nav-active');
         localStorage.setItem("activeNavLinkId", sectionId);
         localStorage.setItem("currentActiveSection", sectionId);
 
@@ -457,8 +457,8 @@ const SidebarManager = {
     },
 
     setActiveSubsectionLink($link, sectionId) {
-        $("ul a.sidebar-link").removeClass("bg-primary-600 text-white");
-        $link.addClass("bg-primary-600 text-white");
+        $("ul a.sidebar-link").removeClass("bg-primary-600 text-white dsg-subnav-active");
+        $link.addClass("dsg-subnav-active");
 
         const linkId = $link.attr("id");
         if (linkId && sectionId) {
@@ -543,20 +543,8 @@ function initSidebar() {
 
     if (!sideMenu || !toggleBtn || !arrowIcon || !mainContent) return;
 
-    const isRtl = document.documentElement.dir === "rtl";
-    const inlineStartProp = isRtl ? "right" : "left";
-    const subSidebarMarginClass = isRtl ? "mr-[230px]" : "ml-[230px]";
-
-    function setInlineStart(el, value) {
-        el.style.left = "";
-        el.style.right = "";
-        el.style[inlineStartProp] = value;
-    }
-
-    // Remove the pre-paint CSS override so JS classes take over without flash
     document.documentElement.removeAttribute("data-sidebar-collapsed");
 
-    // Suppress transition briefly so the initial state applies instantly
     sideMenu.style.transition = "none";
     requestAnimationFrame(() => { sideMenu.style.transition = ""; });
 
@@ -564,29 +552,20 @@ function initSidebar() {
     let isCollapsed = false;
 
     function collapseMenu() {
-        sideMenu.classList.add("w-0");
-        sideMenu.classList.remove("w-[230px]");
+        sideMenu.classList.add("dsg-subnav-hidden");
+        document.documentElement.setAttribute("data-subnav", "collapsed");
         arrowIcon.classList.add("scale-x-[-1]");
         mainContent.classList.remove("leftspace");
-        setInlineStart(toggleBtn, "calc(5rem - 10px)");
-
-        if (kanbanView) {
-            kanbanView.classList.add("w-full");
-            kanbanView.classList.remove(subSidebarMarginClass);
-        }
+        if (kanbanView) kanbanView.classList.add("w-full");
         isCollapsed = true;
     }
 
     function expandMenu() {
-        sideMenu.classList.remove("w-0");
-        sideMenu.classList.add("w-[230px]");
+        sideMenu.classList.remove("dsg-subnav-hidden", "w-0");
+        document.documentElement.removeAttribute("data-subnav");
         arrowIcon.classList.remove("scale-x-[-1]");
         mainContent.classList.add("leftspace");
-        setInlineStart(toggleBtn, "calc(5rem + 230px - 10px)");
-
-        if (kanbanView) {
-            kanbanView.classList.remove("w-full");
-        }
+        if (kanbanView) kanbanView.classList.remove("w-full");
         isCollapsed = false;
     }
 
@@ -3479,7 +3458,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Auto-fill any <input type="color"> that has no saved value yet with
     // the app's accent color, instead of the browser's black default.
     // Reads --split-view-active-border, which style.css always defines
-    // (falls back to #E54F38) and may be overridden elsewhere at runtime.
+    // (falls back to #1C2430) and may be overridden elsewhere at runtime.
     //
     // An input counts as "unsaved" when it has no data-saved attribute
     // value and its current value is empty or the browser default.
@@ -3490,7 +3469,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return (
                 getComputedStyle(document.documentElement)
                     .getPropertyValue('--split-view-active-border')
-                    .trim() || '#E54F38'
+                    .trim() || '#1C2430'
             );
         }
 
@@ -3527,7 +3506,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Auto-fill any <input type="color"> that has no saved value yet with
     // the app's accent color, instead of the browser's black default.
     // Reads --split-view-active-border, which style.css always defines
-    // (falls back to #E54F38) and may be overridden elsewhere at runtime.
+    // (falls back to #1C2430) and may be overridden elsewhere at runtime.
     //
     // An input counts as "unsaved" when it has no data-saved attribute
     // value and its current value is empty or the browser default.
@@ -3538,7 +3517,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return (
                 getComputedStyle(document.documentElement)
                     .getPropertyValue('--split-view-active-border')
-                    .trim() || '#E54F38'
+                    .trim() || '#1C2430'
             );
         }
 

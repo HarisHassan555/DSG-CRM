@@ -225,7 +225,7 @@ class DefaultDashboardGenerator:
     extra_models = []
 
     KPI_COLOR_STYLES = {
-        "primary": {"bg": "#FEF6F5", "icon": "#E54F38"},
+        "primary": {"bg": "#F1F3F6", "icon": "#1C2430"},
         "secondary": {"bg": "#f1f5f9", "icon": "#334155"},
         "success": {"bg": "#dcfce7", "icon": "#15803d"},
         "green": {"bg": "#dcfce7", "icon": "#15803d"},
@@ -237,7 +237,7 @@ class DefaultDashboardGenerator:
         "indigo": {"bg": "#e0e7ff", "icon": "#4f46e5"},
         "purple": {"bg": "#f3e8ff", "icon": "#7e22ce"},
         "teal": {"bg": "#ccfbf1", "icon": "#0f766e"},
-        "orange": {"bg": "#ffedd5", "icon": "#c2410c"},
+        "orange": {"bg": "#f1f5f9", "icon": "#334155"},
         "gray": {"bg": "#f3f4f6", "icon": "#4b5563"},
         "slate": {"bg": "#f1f5f9", "icon": "#334155"},
     }

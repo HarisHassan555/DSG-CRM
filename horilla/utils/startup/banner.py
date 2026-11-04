@@ -30,7 +30,7 @@ def install() -> None:
 
         def write(msg="", *a, **kw):
             if isinstance(msg, str) and msg.startswith("Django version "):
-                msg = "Horilla version " + msg[len("Django version ") :]
+                msg = "DSG version " + msg[len("Django version ") :]
             return original_write(msg, *a, **kw)
 
         self.stdout.write = write
