@@ -1,0 +1,277 @@
+/* DSG studio frame.
+   Section links live in a dock on the right.
+   The record menu is a floating card on the left of the page.
+   Create forms still enter from the right; filters from the left.
+   The New control is the same pill, placed at the trailing end of the toolbar. */
+
+body.dsg-app {
+  background: #eef1f4;
+}
+
+body.dsg-app .dsg-header {
+  width: calc(100% - 104px);
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] body.dsg-app .dsg-header {
+  left: auto;
+  right: 0;
+  width: calc(100% - 104px);
+}
+
+body.dsg-app .dsg-section-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 104px;
+  height: auto;
+  border-left: 1px solid #e7ebf0;
+  border-bottom: 0;
+  z-index: 46;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+html[dir="rtl"] body.dsg-app .dsg-section-bar {
+  right: auto;
+  left: 0;
+  border-left: 0;
+  border-right: 1px solid #e7ebf0;
+}
+
+body.dsg-app .dsg-section-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+body.dsg-app .dsg-section-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+body.dsg-app .nav-link {
+  flex-direction: column;
+  min-width: 0;
+  height: auto;
+  padding: 10px 6px;
+  gap: 4px;
+  border-radius: 14px;
+}
+
+body.dsg-app .nav-link-label {
+  max-width: 88px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+body.dsg-app .dsg-frame {
+  padding-top: 60px;
+  padding-inline-end: 104px;
+}
+
+body.dsg-app #sideMenu.dsg-subnav {
+  top: 76px;
+  left: 16px;
+  right: auto;
+  width: 196px;
+  height: calc(100vh - 96px);
+  border: 1px solid #e7ebf0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(28, 36, 48, 0.04);
+}
+
+html[dir="rtl"] body.dsg-app #sideMenu.dsg-subnav {
+  left: auto;
+  right: 16px;
+}
+
+body.dsg-app #sideMenu.dsg-subnav-hidden,
+html[data-subnav="collapsed"] body.dsg-app #sideMenu {
+  width: 0 !important;
+  min-width: 0 !important;
+  height: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+}
+
+body.dsg-app #subSidebar.dsg-subnav-list {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px 12px;
+  gap: 4px;
+}
+
+body.dsg-app .sidebar-link {
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+body.dsg-app #toggleSideMenu {
+  position: fixed;
+  top: 88px;
+  left: 196px !important;
+  right: auto !important;
+  z-index: 47;
+}
+
+html[dir="rtl"] body.dsg-app #toggleSideMenu {
+  left: auto !important;
+  right: 196px !important;
+}
+
+html[data-subnav="collapsed"] body.dsg-app #toggleSideMenu,
+html[data-sidebar-collapsed="true"] body.dsg-app #toggleSideMenu {
+  left: 8px !important;
+}
+
+html[dir="rtl"][data-subnav="collapsed"] body.dsg-app #toggleSideMenu {
+  right: 8px !important;
+  left: auto !important;
+}
+
+body.dsg-app .modelcontent {
+  padding-top: 12px;
+}
+
+body.dsg-app .leftspace {
+  padding-inline-start: 220px !important;
+}
+
+html[data-subnav="collapsed"] body.dsg-app .leftspace,
+html[data-sidebar-collapsed="true"] body.dsg-app .leftspace {
+  padding-inline-start: 0 !important;
+}
+
+body.dsg-app #mainContent {
+  margin: 8px 16px 16px 8px;
+}
+
+body.dsg-app .floating-menu {
+  left: auto;
+  right: 124px;
+  bottom: 24px;
+  background: #1c2430;
+  border-color: #1c2430;
+}
+
+html[dir="rtl"] body.dsg-app .floating-menu {
+  right: auto;
+  left: 124px;
+}
+
+body.dsg-app .floating-menu > .plus-icon {
+  color: #ffffff;
+}
+
+body.dsg-app .dsg-new-btn {
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+body.dsg-app #searchInput.horilla-search-input--toolbar {
+  width: 160px;
+}
+
+body.dsg-app .dsg-new-btn::before {
+  content: "+";
+  margin-inline-end: 6px;
+  font-weight: 700;
+}
+
+.dsg-drawer-right,
+.dsg-drawer-left {
+  align-items: stretch !important;
+  padding: 0 !important;
+}
+
+.dsg-drawer-right {
+  justify-content: flex-end !important;
+}
+
+.dsg-drawer-left {
+  justify-content: flex-start !important;
+}
+
+.dsg-drawer-right .modal-box,
+.dsg-drawer-left .modal-box {
+  height: 100vh;
+  max-height: 100vh;
+  width: min(520px, 100vw) !important;
+  min-width: 0 !important;
+  max-width: min(520px, 100vw) !important;
+  margin: 0 !important;
+  overflow: auto;
+  transition: transform 0.28s ease, opacity 0.28s ease !important;
+}
+
+.dsg-drawer-right .modal-box {
+  border-radius: 18px 0 0 18px !important;
+}
+
+.dsg-drawer-left .modal-box {
+  border-radius: 0 18px 18px 0 !important;
+}
+
+.dsg-drawer-right .modal-box.scale-95 {
+  transform: translateX(48px) scale(1) !important;
+}
+
+.dsg-drawer-left .modal-box.scale-95 {
+  transform: translateX(-48px) scale(1) !important;
+}
+
+.dsg-drawer-right .modal-box.scale-100,
+.dsg-drawer-left .modal-box.scale-100 {
+  transform: translateX(0) scale(1) !important;
+}
+
+@media (max-width: 991px) {
+  body.dsg-app .dsg-section-bar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 72px;
+    flex-direction: row;
+    padding-top: 0;
+    border-left: 0;
+    border-top: 1px solid #e7ebf0;
+  }
+
+  body.dsg-app .dsg-section-nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  body.dsg-app .dsg-header,
+  html[dir="rtl"] body.dsg-app .dsg-header {
+    width: 100%;
+  }
+
+  body.dsg-app .dsg-frame {
+    padding-inline-end: 0;
+    padding-bottom: 72px;
+  }
+
+  body.dsg-app .nav-link-label {
+    display: none;
+  }
+
+  body.dsg-app .floating-menu {
+    right: 16px;
+    bottom: 88px;
+  }
+}

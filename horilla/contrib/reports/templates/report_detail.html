@@ -372,8 +372,8 @@
             .rpt-summary-group > .rpt-summary-chip:first-child { flex-shrink: 0; }
             [data-edit-tab="filter"] .rpt-summary-value { display: flex; flex-wrap: wrap; gap: 4px; }
             .rpt-filter-pill { margin-inline-end: 0; }
-            button.rpt-summary-chip:hover { border-color: #E54F38; }
-            .rpt-summary-label { flex-shrink: 0; font-weight: 700; color: #E54F38; }
+            button.rpt-summary-chip:hover { border-color: #1C2430; }
+            .rpt-summary-label { flex-shrink: 0; font-weight: 700; color: #1C2430; }
             .rpt-summary-value { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
             .rpt-summary-value i { opacity: .7; }
             .rpt-filter-pill { display: inline-block; margin-inline-end: 6px; border-radius: 6px; padding: 1px 8px; background: #25c32417; border: 1px solid #25c32429; color: #177a16; }
@@ -410,7 +410,7 @@
                     document.querySelectorAll('.rpt-tab').forEach(function (t) {
                         var on = t.getAttribute('data-view') === view;
                         t.setAttribute('aria-selected', on ? 'true' : 'false');
-                        t.style.background = on ? '#E54F38' : 'transparent';
+                        t.style.background = on ? '#1C2430' : 'transparent';
                         t.style.color = on ? '#fff' : '#3b4150';
                     });
                     var inst = window['reportChartInstance_{{ report.pk }}'];

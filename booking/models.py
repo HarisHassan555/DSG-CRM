@@ -146,9 +146,9 @@ class BookingPage(HorillaCoreModel):
     )
     primary_color = models.CharField(
         max_length=7,
-        default="#e54f38",
+        default="#1c2430",
         verbose_name=_("Brand Color"),
-        help_text=_("Hex color used on the public booking page (e.g. #e54f38)."),
+        help_text=_("Hex color used on the public booking page (e.g. #1c2430)."),
     )
     host = models.ForeignKey(
         settings.AUTH_USER_MODEL,

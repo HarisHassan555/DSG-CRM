@@ -197,7 +197,7 @@ class LeadConversionForm(forms.Form):
         choices=[("create_new", "Create New"), ("select_existing", "Select Existing")],
         widget=forms.RadioSelect(
             attrs={
-                "class": "border border-[#cbcbcb] w-3 h-3 text-[#e54f38] bg-white focus:ring-[#e54f38] cursor-pointer"
+                "class": "border border-[#cbcbcb] w-3 h-3 text-[#1c2430] bg-white focus:ring-[#1c2430] cursor-pointer"
             }
         ),
         initial="create_new",
@@ -232,7 +232,7 @@ class LeadConversionForm(forms.Form):
         choices=[("create_new", "Create New"), ("select_existing", "Select Existing")],
         widget=forms.RadioSelect(
             attrs={
-                "class": "border border-[#cbcbcb] w-3 h-3 text-[#e54f38] bg-white focus:ring-[#e54f38] cursor-pointer"
+                "class": "border border-[#cbcbcb] w-3 h-3 text-[#1c2430] bg-white focus:ring-[#1c2430] cursor-pointer"
             }
         ),
         initial="create_new",
@@ -269,7 +269,7 @@ class LeadConversionForm(forms.Form):
         choices=[("create_new", "Create New"), ("select_existing", "Select Existing")],
         widget=forms.RadioSelect(
             attrs={
-                "class": "border border-[#cbcbcb] w-3 h-3 text-[#e54f38] bg-white focus:ring-[#e54f38] cursor-pointer"
+                "class": "border border-[#cbcbcb] w-3 h-3 text-[#1c2430] bg-white focus:ring-[#1c2430] cursor-pointer"
             }
         ),
         initial="create_new",

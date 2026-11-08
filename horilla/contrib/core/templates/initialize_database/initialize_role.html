@@ -11,7 +11,7 @@
                     <li {% if step.active %}class="active"{% endif %}>
                         <div class="sec {% if forloop.counter0 > 0 %}flex flex-col {% if forloop.last %}items-end{% else %}items-center{% endif %}{% endif %}">
                             <span
-                                class="bg-[#e54f38] h-[30px] w-[30px] flex items-center justify-center rounded-[50px] text-white"
+                                class="bg-[#1c2430] h-[30px] w-[30px] flex items-center justify-center rounded-[50px] text-white"
                             >
                                 {{ step.step }}
                             </span>
@@ -49,7 +49,7 @@
                                 title="{% trans 'Delete role' %}"
                             >
                                 <svg
-                                    class="text-[#e54f38]"
+                                    class="text-[#1c2430]"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="10"
                                     height="10"
@@ -169,7 +169,7 @@
                         hx-vals='{"next_step": "true"}'
                         hx-push-url="{{push_url}}"
                         hx-select="#{{select_id}}"
-                        class="border-[1px] border-[#e54f38] hover:border-[#9b210f] hover:bg-secondary-600 rounded-[5px] px-[15px] py-[8px] text-[#e54f38] inline-flex items-center gap-3 whitespace-nowrap btn-with-icon [transition:.3s] hover:text-white"
+                        class="border-[1px] border-[#1c2430] hover:border-[#9b210f] hover:bg-secondary-600 rounded-[5px] px-[15px] py-[8px] text-[#1c2430] inline-flex items-center gap-3 whitespace-nowrap btn-with-icon [transition:.3s] hover:text-white"
                     >
                         {% if is_last %}
                             {% trans "Sign In" %}

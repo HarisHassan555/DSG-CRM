@@ -144,7 +144,7 @@ class WebToLeadDuplicateSubmissionTests(TestCase):
             selected_fields=json.dumps(
                 ["first_name", "last_name", "email", "lead_company"]
             ),
-            header_color="#ed4f38",
+            header_color="#1c2430",
             success_message="Thanks",
             success_description="We will contact you.",
             lead_owner=cls.owner,

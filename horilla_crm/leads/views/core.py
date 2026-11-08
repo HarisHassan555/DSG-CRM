@@ -906,8 +906,8 @@ class LeadDetailView(RecentlyViewedMixin, LoginRequiredMixin, HorillaDetailView)
                 "hx-on:click": "event.preventDefault();",
                 "style": (
                     "cursor:not-allowed;"
-                    "background-color:#FBE5E1!important;"
-                    "color:#E54F38!important;"
+                    "background-color:#E7EBF0!important;"
+                    "color:#1C2430!important;"
                 ),
                 "aria-label": _("You don't have permission to convert this lead"),
             }
