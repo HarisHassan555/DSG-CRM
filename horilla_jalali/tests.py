@@ -219,9 +219,13 @@ class JalaliTimelineCalendarTests(SimpleTestCase):
         timeline = Path(get_template("timeline_view.html").origin.name).read_text(
             encoding="utf-8"
         )
-        script = Path(
-            finders.find("horilla_jalali/js/horilla_calendar_jalali.js")
-        ).read_text(encoding="utf-8")
+        script_path = finders.find("horilla_jalali/js/horilla_calendar_jalali.js")
+        if script_path is None:
+            script_path = (
+                Path(__file__).resolve().parent
+                / "static/horilla_jalali/js/horilla_calendar_jalali.js"
+            )
+        script = Path(script_path).read_text(encoding="utf-8")
         self.assertIn("window.horillaTimelineCalendar", timeline)
         self.assertIn(
             "window.horillaTimelineCalendar = JALALI_TIMELINE_CALENDAR;", script
